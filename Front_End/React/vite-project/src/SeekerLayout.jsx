@@ -1,34 +1,34 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom"; // ✅ Include Outlet
 
-const SeekerLayout = () => {
+const SeekerNavbarLayout = () => {
   return (
     <>
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#8baed2" }}>
-        <div className="container-fluid">
-          <span className="navbar-brand fw-bold fs-4">Job Portal</span>
-          <form className="d-flex ms-auto me-3">
-            <input className="form-control" type="search" placeholder="Search" aria-label="Search" style={{ width: '250px' }} />
+      <nav className="navbar navbar-expand-lg shadow-sm" style={{ backgroundColor: "#f0f4f8" }}>
+        <div className="container-fluid px-4">
+          <span className="navbar-brand fw-bold fs-3 text-primary">Jobular</span>
+          <form className="d-flex ms-auto me-4">
+            <input
+              className="form-control rounded-pill px-3 shadow-sm"
+              type="search"
+              placeholder="Search jobs or companies"
+              aria-label="Search"
+              style={{ width: '250px' }}
+            />
           </form>
-          <div className="navbar-nav">
-            <Link className="nav-link mx-2 fw-semibold text-dark" to="/seeker">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" className="me-1">
-                <path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7 5 3.18V2h3v5.09z" />
-              </svg> 
-              Home
-            </Link>
-            <Link className="nav-link mx-2 fw-semibold text-dark" to="/SeekerProfile">Profile</Link>
-            <Link className="nav-link mx-2 fw-semibold text-dark" to="/jobs">Jobs</Link>
-            <Link className="nav-link mx-2 fw-semibold text-dark" to="/logout">Log Out</Link>
+          <div className="navbar-nav d-flex align-items-center gap-3">
+            <Link className="nav-link fw-semibold text-dark" to="/seeker">Home</Link>
+            <Link className="nav-link fw-semibold text-dark" to="/seeker/profile">Profile</Link>
+            <Link className="nav-link fw-semibold text-dark" to="/seeker/jobs">Jobs</Link>
+            <Link className="nav-link fw-semibold text-danger" to="/seeker/logout">Logout</Link>
           </div>
         </div>
       </nav>
 
-      {/* Outlet renders nested route content */}
+      {/* 👇 This renders nested routes like <Seeker /> */}
       <Outlet />
     </>
   );
 };
 
-export default SeekerLayout;
+export default SeekerNavbarLayout;

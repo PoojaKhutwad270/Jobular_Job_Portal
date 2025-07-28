@@ -54,7 +54,7 @@ const LoginComponent = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: "90vh" }}>
+    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
         <div className="card shadow p-4 rounded-4 w-100" style={{ maxWidth: "700px" }}>
          
           <form onSubmit={handleLogin}>
@@ -95,7 +95,7 @@ const LoginComponent = () => {
                 Remember me
               </label>
             </div>{" "}
-            <button className="btn rounded-pill px-5 fw-bold" style={{ backgroundColor: "#8baed2ff"}}>
+            <button className="btn rounded-pill px-5 fw-bold  btn-primary me-2" >
               Sign in
             </button>{" "}
           </form>{" "}

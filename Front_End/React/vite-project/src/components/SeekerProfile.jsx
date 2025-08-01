@@ -2,11 +2,29 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+
+
 
 const SeekerProfile = () => {
   const loggedInUser = useSelector((store) => store.loggedInUser);
+  const navigate = useNavigate();
   const [seeker, setSeeker] = useState(null);
+const [showModal, setShowModal] = useState(false); // 👈 for popup
 
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+
+  const handleNavigate = (section) => {
+    setShowModal(false);
+    if (section === "education") {
+      navigate("/seeker/add-education");
+    } else if (section === "skills") {
+      navigate("/seeker/add-skills");
+    }
+  };
   useEffect(() => {
     if (!loggedInUser?.uid) return;
 
@@ -56,17 +74,43 @@ const SeekerProfile = () => {
           <p className="text-muted">{seeker?.graduationDegree || "Degree not available"}</p>
           <p className="text-muted">{seeker?.university || "University not available"}</p>
           <div className="d-flex gap-3 mt-3">
-           <button className="btn btn-primary me-2">Add Profile Section</button>
+           <button className="btn btn-primary me-2" onClick={handleShow}>Add Profile Section</button>
 
 </div>
         </div>
       </div>
+ <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Select Profile Section</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Button
+            className="w-100 mb-2"
+            variant="outline-primary"
+            onClick={() => handleNavigate("education")}
+          >
+            Add Education
+          </Button>
+          <Button
+            className="w-100"
+            variant="outline-success"
+            onClick={() => handleNavigate("skills")}
+          >
+            Add Skills
+          </Button>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cancel
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
       {/* Education Section */}
       <div className="container mt-4 card shadow-lg p-5 rounded-4 border-0">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h2 className="fs-4 fw-bold text-dark m-0">Education</h2>
-          <button className="btn btn-primary me-2">Add +</button>
+          <button className="btn btn-primary me-2"  onClick={() => navigate("/seeker/add-education")} >Add +</button>
         </div>
 
         {seeker ? (
@@ -84,14 +128,14 @@ const SeekerProfile = () => {
         )}
       </div>
 
-      {/* Skills Section */}
+  
       <div className="container mt-4 card shadow-lg p-5 rounded-4 border-0">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h2 className="fs-4 fw-bold text-dark m-0">Skills</h2>
           <button className="btn btn-primary me-2">Add +</button>
         </div>
 
-        {/* Placeholder */}
+       
         <ul className="list-unstyled">
           <li className="text-muted">Skills data coming soon...</li>
         </ul>

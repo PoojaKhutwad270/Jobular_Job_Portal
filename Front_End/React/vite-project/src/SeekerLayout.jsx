@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom"; // ✅ Include Outlet
 const SeekerNavbarLayout = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg shadow-sm" style={{ backgroundColor: "#f0f4f8" }}>
+      <nav className="navbar navbar-expand-lg shadow-sm sticky-top" style={{ backgroundColor: "#f0f4f8"  }} >
         <div className="container-fluid px-4">
           <span className="navbar-brand fw-bold fs-3 text-primary">Jobular</span>
           <form className="d-flex ms-auto me-4">

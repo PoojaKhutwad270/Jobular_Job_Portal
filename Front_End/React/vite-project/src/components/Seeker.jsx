@@ -1,43 +1,82 @@
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import AllJobs from './AllJobs'; 
 
 const Seeker = () => {
   const loggedInUser = useSelector((store) => store.loggedInUser);
+  const [seeker, setSeeker] = useState(null);
+  const navigate = useNavigate();
+  const [ jobs, setJobs ] = useState([]);
 
+  useEffect(() => {
+    if (!loggedInUser?.uid) return;
+
+    axios
+      .get(`http://localhost:8081/seeker/getSeeker/${loggedInUser.uid}`)
+      .then((response) => setSeeker(response.data))
+      .catch((error) => console.error("Error fetching seeker profile:", error));
+  }, [loggedInUser]);
+
+  useEffect(()=>{
+    axios
+      .get("http://localhost:8081/jobs/getAllJobs")
+      .then((response) => { 
+        console.log("Jobs Fetched", response.data);
+        setJobs(response.data); })
+      .catch((error) => console.error("Error fetching jobs posted"))
+  }, []);
   return (
-    <div>
-      {/* Navbar */}
-      {/* <nav className="navbar navbar-expand-lg shadow-sm" style={{ backgroundColor: "#f0f4f8" }}>
-        <div className="container-fluid px-4">
-          <span className="navbar-brand fw-bold fs-3 text-primary">Jobular</span>
+    <div className="container mt-5">
+      <div className="row">
+      
+        <div className="col-md-4">
+          <div
+            className="card shadow-lg p-4 rounded-4 border-0 mb-4"
+            style={{ position: 'sticky', top: '50px' }}
+          >
+             <div>
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg"
+            alt="Profile"
+            className="rounded-circle border shadow-sm"
+            width="200"
+            height="200"
+          />
+        </div>
 
-          <form className="d-flex ms-auto me-4">
-            <input
-              className="form-control rounded-pill px-3 shadow-sm"
-              type="search"
-              placeholder="Search jobs or companies"
-              aria-label="Search"
-              style={{ width: '250px' }}
-            />
-          </form>
+            <h2 className="fw-bold text-primary mb-2">{loggedInUser?.uname}</h2>
+            <p className="text-muted">{seeker?.graduationDegree || "Degree not available"}</p>
+            <p className="text-muted">{seeker?.university || "University not available"}</p>
 
-          <div className="navbar-nav d-flex align-items-center gap-3">
-            <Link className="nav-link fw-semibold text-dark" to="/seeker">Home</Link>
-            <Link className="nav-link fw-semibold text-dark" to="/SeekerProfile">Profile</Link>
-            <Link className="nav-link fw-semibold text-dark" to="/jobs">Jobs</Link>
-            <Link className="nav-link fw-semibold text-danger" to="/logout">Logout</Link>
+            <hr />
+
+          
+            <nav className="nav flex-column mt-3">
+              <button className="nav-link text-start btn btn-link ">Applied Jobs</button>
+              <button className="nav-link text-start btn btn-link">Saved Jobs</button>
+              <button className="nav-link text-start btn btn-link"  onClick={() => navigate("/seeker/profile")} >Edit Profile</button>
+              <button className="nav-link text-start btn btn-link">Schedule</button>
+            </nav>
           </div>
         </div>
-      </nav> */}
 
-      {/* Welcome Card */}
-      <div className="container mt-5">
-        <div className="card shadow-lg p-5 rounded-4 border-0">
-          <h2 className="text-primary mb-3">Welcome, {loggedInUser?.uname || 'User'}!</h2>
-          <p className="fs-5 text-muted" style={{ lineHeight: '1.8' }}>
-            Explore job opportunities tailored for you. Stay updated with the latest openings that match your skills.
-            Apply with a single click and grow your career today!
-          </p>
+       
+        <div className="col-md-8">
+          <div className="card shadow-lg p-4 rounded-4 border-0 mb-4">
+           {jobs.map( job => (
+            <div key ={job.jobId} className='mb-4'>
+              <h2 className="fw-bold text-primary mb-2">{job.companyName}</h2>
+              <p className="text-muted"> {job.jobTitle}</p>
+              <p className="text-muted"> {job.location}</p>
+            </div>
+           ))}
+
+          </div>
+          
+
+  
         </div>
       </div>
     </div>

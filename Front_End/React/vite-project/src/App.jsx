@@ -6,6 +6,8 @@ import Seeker from "./components/Seeker";
 import SeekerProfile from "./components/SeekerProfile";
 import Logout from "./components/logout";
 import SeekerNavbarLayout from "./SeekerLayout";
+import SeekerEducationSection from "./components/SeekerEducationComponent";
+import AllJobs from "./components/AllJobs";
 
 const AppContent = () => {
   const location = useLocation();
@@ -53,7 +55,8 @@ const hideNav = ["/seeker", "/SeekerProfile"].some((path) =>
     <Route index element={<Seeker />} /> 
     <Route path="profile" element={<SeekerProfile />} /> 
     <Route path="logout" element={<Logout />} /> 
-    <Route path="jobs" element={<div>Jobs Page</div>} /> 
+    <Route path="jobs" element={< AllJobs />} /> 
+    <Route path="add-education" element={< SeekerEducationSection />}/>
   </Route>
 </Routes>
     </div>

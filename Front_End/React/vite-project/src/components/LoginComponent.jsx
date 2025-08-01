@@ -44,6 +44,9 @@ const LoginComponent = () => {
     navigate("/seeker");
   } 
  
+  else if(roleId===3){
+    navigate("/RecruiterDashboard")
+  }
   else{
     alert("Invalid user")
   }

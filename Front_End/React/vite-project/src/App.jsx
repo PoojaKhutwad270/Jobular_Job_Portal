@@ -4,16 +4,20 @@ import RegistrationComponent from "./components/RegistrationComponent";
 import LoginComponent from "./components/LoginComponent";
 import Seeker from "./components/SeekerDashboard";
 import SeekerProfile from "./components/SeekerProfile";
-import Logout from "./components/logout";
+
 import SeekerNavbarLayout from "./SeekerLayout";
 import SeekerEducationSection from "./components/SeekerEducationComponent";
 import AllJobs from "./components/AllJobs";
+import Logout from "./components/Logout";
+import RecruiterNavbarLayout from "./RecruiterLayout";
+import Recruiter from "./components/RecruiterDashboard/Recruiter";
+import PostJob from "./components/RecruiterDashboard/PostJob";
 
 const AppContent = () => {
   const location = useLocation();
 
 
-const hideNav = ["/seeker", "/SeekerProfile"].some((path) =>
+const hideNav = ["/seeker", "/SeekerProfile","/Recruiter","/PostJob"].some((path) =>
   location.pathname.startsWith(path)
 );
  return (
@@ -49,6 +53,7 @@ const hideNav = ["/seeker", "/SeekerProfile"].some((path) =>
   <Route path="/" element={<RegistrationComponent />} />
   <Route path="/register" element={<RegistrationComponent />} />
   <Route path="/login" element={<LoginComponent />} />
+  
 
   {/* Seeker Layout with nested routes */}
   <Route path="/seeker" element={<SeekerNavbarLayout />}>
@@ -57,6 +62,12 @@ const hideNav = ["/seeker", "/SeekerProfile"].some((path) =>
     <Route path="logout" element={<Logout />} /> 
     <Route path="jobs" element={< AllJobs />} /> 
     <Route path="add-education" element={< SeekerEducationSection />}/>
+  </Route>
+
+  {/*Recruiter Dashboard routes*/}
+    <Route path="/RecruiterDashboard" element={<RecruiterNavbarLayout/>}>
+    <Route index element={<PostJob/>} />
+    <Route path="Recruiter" element={<PostJob />} />
   </Route>
 </Routes>
     </div>

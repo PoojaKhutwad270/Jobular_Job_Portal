@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import RegistrationComponent from "./components/RegistrationComponent";
 import LoginComponent from "./components/LoginComponent";
-import Seeker from "./components/Seeker";
+import Seeker from "./components/SeekerDashboard";
 import SeekerProfile from "./components/SeekerProfile";
 import Logout from "./components/logout";
 import SeekerNavbarLayout from "./SeekerLayout";

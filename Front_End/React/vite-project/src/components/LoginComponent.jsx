@@ -5,7 +5,7 @@ import { loginSuccess, loginFail } from "../features/userSlice";
 import axios from "axios";
 import LoggedInPageComponent from "./LoggedInPageComponent";
 import { userAction } from "../store/userSlice";
-import Seeker from "./Seeker";
+import Seeker from "./SeekerDashboard";
 
 const LoginComponent = () => {
   const dispatch = useDispatch();
@@ -43,6 +43,7 @@ const LoginComponent = () => {
   if (roleId === 2) {
     navigate("/seeker");
   } 
+ 
   else{
     alert("Invalid user")
   }

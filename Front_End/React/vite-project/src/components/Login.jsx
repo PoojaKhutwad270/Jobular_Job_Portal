@@ -14,7 +14,6 @@ const Login = () => {
       email,
       password,
     };
-
     // let o = JSON.stringify(obj);
     // console.log(o);
 

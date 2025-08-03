@@ -1,32 +1,84 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom"; // ✅ Include Outlet
+import { Link, Outlet } from "react-router-dom";
 
 const RecruiterNavbarLayout = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg shadow-sm" style={{ backgroundColor: "#f0f4f8" }}>
-        <div className="container-fluid px-4">
+      <nav
+        className="navbar navbar-expand-lg shadow-sm sticky-top"
+        style={{ backgroundColor: "#f0f4f8" }}
+      >
+        <div className="container-fluid px-4 d-flex align-items-center">
+          {/* Brand on the far left */}
           <span className="navbar-brand fw-bold fs-3 text-primary">Jobular</span>
-          <form className="d-flex ms-auto me-4">
+
+          {/* Spacer pushes next content to right */}
+          <div className="flex-grow-1"></div>
+
+          {/* Search bar - placed just before Home */}
+          <form className="d-flex me-3">
             <input
               className="form-control rounded-pill px-3 shadow-sm"
               type="search"
-              placeholder="Search Candidates"
+              placeholder="Search candidates"
               aria-label="Search"
-              style={{ width: '250px' }}
+              style={{ width: "250px" }}
             />
           </form>
-          <div className="navbar-nav d-flex align-items-center gap-3">
-            <Link className="nav-link fw-semibold text-dark" to="/RecruiterDashboard/Recruiter">Home</Link>
-            <Link className="nav-link fw-semibold text-dark" to="/recruiter/profile">Profile</Link>
-            <Link className="nav-link fw-semibold text-dark" to="/recruiterDashboard/PostJobs">PostJobs</Link>
-            <Link className="nav-link fw-semibold text-danger" to="/recruiterSSSS/logout">Logout</Link>
+
+          {/* Nav links */}
+          <div className="navbar-nav d-flex align-items-center gap-4">
+            <Link className="nav-link fw-semibold text-dark" to="/RecruiterDashboard">
+              Home
+            </Link>
+            <Link className="nav-link fw-semibold text-dark" to="/recruiter/profile">
+              Profile
+            </Link>
+            <Link className="nav-link fw-semibold text-danger" to="/logout">
+              Logout
+            </Link>
           </div>
         </div>
       </nav>
 
-      {/* 👇 This renders nested routes like <Seeker /> */}
-      <Outlet />
+      {/* Sidebar + Routed content */}
+      <div style={{ display: "flex", minHeight: "100vh" }}>
+        <div
+          style={{ width: "220px", backgroundColor: "#f0f4f8", padding: "1.5rem" }}
+        >
+          <h6 className="fw-bold mb-3 text-secondary">Recruiter Actions</h6>
+          <ul className="nav flex-column">
+            <li className="nav-item mb-2">
+              <Link
+                to="/RecruiterDashboard/PostJobForm"
+                className="nav-link text-dark"
+              >
+                Post Job
+              </Link>
+            </li>
+            <li className="nav-item mb-2">
+              <Link
+                to="/RecruiterDashboard/PostedJobs"
+                className="nav-link text-dark"
+              >
+                My Posted Jobs
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/RecruiterDashboard/JobApplications"
+                className="nav-link text-dark"
+              >
+                Job Applications
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div style={{ flex: 1, padding: "2rem" }}>
+          <Outlet />
+        </div>
+      </div>
     </>
   );
 };

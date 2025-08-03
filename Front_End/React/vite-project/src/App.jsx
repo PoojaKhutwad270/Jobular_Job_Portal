@@ -10,8 +10,11 @@ import SeekerEducationSection from "./components/SeekerEducationComponent";
 import AllJobs from "./components/AllJobs";
 import Logout from "./components/Logout";
 import RecruiterNavbarLayout from "./RecruiterLayout";
-import Recruiter from "./components/RecruiterDashboard/Recruiter";
+// import Recruiter from "./components/RecruiterDashboard/Recruiter";
 import PostJob from "./components/RecruiterDashboard/PostJob";
+import PostedJobs from "./components/RecruiterDashboard/PostedJobs";
+import JobApplications from "./components/RecruiterDashboard/JobApplications.";
+import PostJobForm from "./components/RecruiterDashboard/PostJobForm";
 
 const AppContent = () => {
   const location = useLocation();
@@ -65,9 +68,13 @@ const hideNav = ["/seeker", "/SeekerProfile","/Recruiter","/PostJob"].some((path
   </Route>
 
   {/*Recruiter Dashboard routes*/}
-    <Route path="/RecruiterDashboard" element={<RecruiterNavbarLayout/>}>
-    <Route index element={<PostJob/>} />
-    <Route path="Recruiter" element={<PostJob />} />
+  <Route path="/RecruiterDashboard" element={<RecruiterNavbarLayout />}>
+  <Route index element={<PostJob />} />
+  {/* <Route path="Recruiter" element={<PostJob />} /> */}
+  <Route path="PostJob" element={<PostJob />} />
+  <Route path="PostedJobs" element={<PostedJobs />} />
+  <Route path="JobApplications" element={<JobApplications />} />
+  <Route path="PostJobForm" element={<PostJobForm />} />
   </Route>
 </Routes>
     </div>

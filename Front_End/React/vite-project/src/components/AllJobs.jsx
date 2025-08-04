@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import SeekerNavbar from './SeekerNavbar';
 
 const AllJobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -30,6 +31,9 @@ const AllJobs = () => {
   };
 
   return (
+    <>
+    
+    <SeekerNavbar/>
     <div className="container mt-5">
       <div className="row">
         <div className="col-md-8">
@@ -93,7 +97,7 @@ const AllJobs = () => {
           </div>
         </div>
       )}
-    </div>
+    </div></>
   );
 };
 

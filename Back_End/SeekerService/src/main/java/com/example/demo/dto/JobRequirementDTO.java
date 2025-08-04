@@ -10,11 +10,12 @@ public class JobRequirementDTO {
 	 private String jobTitle;
 	 private int experience;
 	 private Date deadline;
-
+	 private String description;
 	 private String companyName;
 	 private String companyAddress;
 	 private String companyEmail;
 	 private String location;
+	 private float salary;
 
 	    private String hrEmail;
 	    private String hrMobile;
@@ -30,9 +31,19 @@ public class JobRequirementDTO {
 	    	this.location=job.getCompany().getLocation();
 	    	this.hrEmail=job.getCompany().getUser().getEmail();
 	    	this.hrMobile=job.getCompany().getUser().getPhoneNo();
+	    	this.description=job.getDescription();
+	    	this.setSalary(job.getSalary());
 	    	
 	    	
 	    }
+
+		public String getDescription() {
+			return description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 
 		public int getJobId() {
 			return jobId;
@@ -112,6 +123,14 @@ public class JobRequirementDTO {
 
 		public void setHrMobile(String hrMobile) {
 			this.hrMobile = hrMobile;
+		}
+
+		public float getSalary() {
+			return salary;
+		}
+
+		public void setSalary(float salary) {
+			this.salary = salary;
 		}
 	    
 }

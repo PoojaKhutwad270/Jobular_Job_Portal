@@ -1,6 +1,10 @@
 package com.example.demo.entities;
 
 import java.util.Date;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,8 +26,39 @@ public class JobRequirement {
 	 @Column(name="job_title")
 	private String jobTitle;
 	private int experience;
-	private Date deadline;
+	private float salary;
 	
+	@OneToMany(mappedBy = "job")
+	private List<Applications> applications;
+
+	public List<Applications> getApplications() {
+		return applications;
+	}
+
+	public void setApplications(List<Applications> applications) {
+		this.applications = applications;
+	}
+
+	public float getSalary() {
+		return salary;
+	}
+
+	public void setSalary(float salary) {
+		this.salary = salary;
+	}
+
+	private Date deadline;
+	@Column(name="role_description")
+	private String description;
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	@ManyToOne
 	@JoinColumn(name = "cid")
 	private Company company;

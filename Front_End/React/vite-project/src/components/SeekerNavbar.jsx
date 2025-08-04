@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom"; // ✅ Include Outlet
 
-const SeekerNavbarLayout = () => {
+const SeekerNavbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg shadow-sm sticky-top" style={{ backgroundColor: "#f0f4f8"  }} >
@@ -31,4 +31,4 @@ const SeekerNavbarLayout = () => {
   );
 };
 
-export default SeekerNavbarLayout;
+export default SeekerNavbar;

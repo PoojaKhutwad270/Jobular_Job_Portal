@@ -8,7 +8,10 @@ import Logout from "./components/logout";
 import SeekerNavbarLayout from "./components/SeekerNavbar";
 import SeekerEducationSection from "./components/SeekerEducationComponent";
 import AllJobs from "./components/AllJobs";
-import Navbar from "./components/Navbar";
+import { Navbar } from "react-bootstrap";
+
+
+
 
 const AppContent = () => {
   const location = useLocation();

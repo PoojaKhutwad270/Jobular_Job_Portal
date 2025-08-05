@@ -26,7 +26,7 @@ const SeekerAppliedJobs = () => {
       .catch((error) => console.error("Error fetching jobs:", error));
   }, [seeker]);
 
-  const getStatusBadge = (status) => {
+  const getStatus = (status) => {
     if (status === 1)
       return <span className="badge bg-success">Reviewing</span>;
     if (status === 2)
@@ -67,7 +67,7 @@ const SeekerAppliedJobs = () => {
                         <strong>Applied:</strong> {new Date(app?.date).toLocaleDateString()}
                       </p>
 
-                      {getStatusBadge(app.status)}
+                      {getStatus(app.status)}
                     </div>
                   </div>
                 </div>

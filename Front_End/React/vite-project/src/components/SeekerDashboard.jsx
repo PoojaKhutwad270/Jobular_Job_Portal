@@ -187,10 +187,10 @@ const handleApply = async (jobId) => {
                       <p><strong>HR Mobile:</strong> {selectedJob.hrMobile}</p>
                     </div>
                     <div className="modal-footer">
-                      <button className="btn btn-secondary" onClick={() => setShowModal(false)}>
+                      <button className="btn btn-primary" onClick={() => setShowModal(false)}>
                         Close
                       </button>
-                      <button className="btn btn-success" onClick={()=>handleApply(selectedJob.jobId)}>
+                      <button className="btn btn-primary" onClick={()=>handleApply(selectedJob.jobId)}>
                         Apply
                       </button>
                     </div>

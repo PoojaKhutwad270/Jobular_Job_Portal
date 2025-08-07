@@ -20,14 +20,34 @@ SeekerRepository sRepo;
 	
 	public Optional<JobSeeker> findBySeekerBYId(int uid) {
 		
-		return sRepo.findById(uid);
+		 return Optional.ofNullable(sRepo.findByUserUid(uid));
+	}
+	public JobSeeker saveSeeker(int uid, JobSeeker seeker) {
+	    User user = urepo.findById(uid)
+	        .orElseThrow(() -> new RuntimeException("User not found with id: " + uid));
+
+	    JobSeeker existing = sRepo.findByUserUid(uid); 
+
+	    if (existing != null) {
+	        existing.setSchoolNameSSC(seeker.getSchoolNameSSC());
+	        existing.setMarksSSC(seeker.getMarksSSC());
+	        existing.setSchoolNameHSC(seeker.getSchoolNameHSC());
+	        existing.setMarksHSC(seeker.getMarksHSC());
+	        existing.setGraduationDegree(seeker.getGraduationDegree());
+	        existing.setUniversity(seeker.getUniversity());
+	        existing.setGraduationMarks(seeker.getGraduationMarks());
+	        existing.setPassout_year(seeker.getPassout_year());
+	        existing.setExperience(seeker.getExperience());
+	        existing.setDob(seeker.getDob());
+	        existing.setGender(seeker.getGender());
+	        existing.setResume(seeker.getResume());
+	        return sRepo.save(existing);
+	    }
+
+	  
+	    seeker.setUser(user);
+	    return sRepo.save(seeker);
 	}
 
-	public JobSeeker saveSeeker(int uid,JobSeeker seeker) {
-		 User user = urepo.findById(uid)
-	                .orElseThrow(() -> new RuntimeException("User not found with id: " + uid));
-	        seeker.setUser(user);
-		return sRepo.save(seeker);
-	}
 
 }

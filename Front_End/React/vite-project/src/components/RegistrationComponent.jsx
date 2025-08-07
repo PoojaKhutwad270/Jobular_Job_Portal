@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import RecruiterForm from "./RecruiterForm";
+import Navbar from "./Navbar";
 
 const RegistrationComponent = () => {
   const [formData, setFormData] = useState({
@@ -119,6 +120,7 @@ const RegistrationComponent = () => {
 
   return (
     <>
+    <Navbar/>
       {/* Form Container */}
       <div
         className="container d-flex justify-content-center align-items-center"

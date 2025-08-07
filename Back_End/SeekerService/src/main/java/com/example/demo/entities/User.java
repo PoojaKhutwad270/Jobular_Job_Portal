@@ -3,6 +3,7 @@ package com.example.demo.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -34,7 +35,6 @@ public class User {
 	private String password;
 
 	 @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-
 	 @JsonIgnoreProperties("user")
 	  private JobSeeker seeker;
 

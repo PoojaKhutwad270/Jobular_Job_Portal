@@ -1,7 +1,12 @@
 package com.example.demo.entities;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
@@ -12,7 +17,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -20,7 +26,8 @@ import jakarta.persistence.Table;
 @Table(name="seeker")
 public class JobSeeker {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	@Column(name="sid")
 private int sid;
 	@Column(name="school_name_10th")
@@ -51,8 +58,27 @@ private int sid;
 	 @OneToOne(cascade = CascadeType.ALL)
 	 @JsonIgnoreProperties("seeker")
 	 @JoinColumn(name = "uid")
-
 	  private User user;
+	 
+	 @OneToMany(mappedBy = "seeker", cascade = CascadeType.ALL, orphanRemoval = true)
+	 private Set<SeekerSkill> seekerSkills = new HashSet<>();
+	 
+	 @OneToMany(mappedBy = "seeker")
+		private List<Applications> applications;
+
+
+	public List<Applications> getApplications() {
+		return applications;
+	}
+
+	public void setApplications(List<Applications> applications) {
+		this.applications = applications;
+	}
+
+	public JobSeeker() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getSid() {
 		return sid;
@@ -166,14 +192,17 @@ private int sid;
 		this.user = user;
 	}
 
-	public JobSeeker() {
-		super();
-		// TODO Auto-generated constructor stub
+	public Set<SeekerSkill> getSeekerSkills() {
+		return seekerSkills;
+	}
+
+	public void setSeekerSkills(Set<SeekerSkill> seekerSkills) {
+		this.seekerSkills = seekerSkills;
 	}
 
 	public JobSeeker(int sid, String schoolNameSSC, float marksSSC, String schoolNameHSC, float marksHSC,
 			String graduationDegree, String university, float graduationMarks, Date passout_year, int experience,
-			Date dob, String gender, String resume, User user) {
+			Date dob, String gender, String resume, User user, Set<SeekerSkill> seekerSkills) {
 		super();
 		this.sid = sid;
 		this.schoolNameSSC = schoolNameSSC;
@@ -189,8 +218,11 @@ private int sid;
 		this.gender = gender;
 		this.resume = resume;
 		this.user = user;
+		this.seekerSkills = seekerSkills;
 	}
 
+
+	
 	
 
 

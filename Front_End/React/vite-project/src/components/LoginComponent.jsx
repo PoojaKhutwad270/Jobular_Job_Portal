@@ -6,6 +6,7 @@ import axios from "axios";
 import LoggedInPageComponent from "./LoggedInPageComponent";
 import { userAction } from "../store/userSlice";
 import Seeker from "./SeekerDashboard";
+import Navbar from "./Navbar";
 
 const LoginComponent = () => {
   const dispatch = useDispatch();
@@ -58,6 +59,8 @@ const LoginComponent = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
         <div className="card shadow p-4 rounded-4 w-100" style={{ maxWidth: "700px" }}>
          
@@ -106,7 +109,7 @@ const LoginComponent = () => {
      
       </div>
       </div>
-      
+      </>
  
   );
 

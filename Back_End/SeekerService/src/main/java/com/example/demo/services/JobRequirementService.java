@@ -2,6 +2,7 @@ package com.example.demo.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,5 +37,13 @@ public class JobRequirementService {
 //
 //        return jobDTOs;
 //    }
+
+	public Optional<JobRequirementDTO> getJobById(int reqid) {
+		Optional<JobRequirement> job = jrepo.findById(reqid); 
+		 JobRequirementDTO jobdto = new JobRequirementDTO(job.get());
+		return Optional.of(jobdto);
+		
+	}
+
 	
 }

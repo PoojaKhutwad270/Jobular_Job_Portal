@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 
 const PostJob = () => {
-    const loggedInUser = useSelector((store) => store.loggedInUser);
+  //  const loggedInUser = useSelector((store) => store.loggedInUser);
 
     return (
         <div>

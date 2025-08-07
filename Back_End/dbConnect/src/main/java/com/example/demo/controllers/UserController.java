@@ -66,15 +66,10 @@ public class UserController {
 	public User UpdateUserRecord(@RequestBody User us, @RequestParam("uid") int id) {
 		return userv.UpdateUser(id, us);
 	}
-	
+
 	//Login 
 	@PostMapping("/loginuser")
 	public User InsertUserRecord(@RequestBody LoginRequest loginRequest) {
-		
-		 
-		return userv.LogInUser( loginRequest.getEmail(),loginRequest.getPassword());
-		
-		 
-	}
-	
+		return userv.LogInUser( loginRequest.getEmail(),loginRequest.getPassword());	 
+	}	
 }

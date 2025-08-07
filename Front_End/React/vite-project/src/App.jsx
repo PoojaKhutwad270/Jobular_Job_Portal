@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useLocation, Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link,  Outlet } from "react-router-dom";
 import RegistrationComponent from "./components/RegistrationComponent";
 import LoginComponent from "./components/LoginComponent";
 import Seeker from "./components/SeekerDashboard";
@@ -14,7 +14,7 @@ import { Navbar } from "react-bootstrap";
 
 
 const AppContent = () => {
-  const location = useLocation();
+  //const location = useLocation();
 
 
 // const hideNav = ["/seeker", "/SeekerProfile"].some((path) =>

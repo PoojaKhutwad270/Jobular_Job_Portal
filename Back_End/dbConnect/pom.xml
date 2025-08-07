@@ -46,11 +46,7 @@
 			<optional>true</optional>
 		</dependency>
 		
-		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -66,5 +62,11 @@
 			</plugin>
 		</plugins>
 	</build>
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>8.3.0</version>
+    <scope>runtime</scope>
+</dependency>
 
 </project>

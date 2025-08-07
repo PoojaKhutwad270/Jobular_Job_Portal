@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const hideNav = ["/seeker", "/SeekerProfile"].some((path) =>
-        location.pathname.startsWith(path)
-    );
+    // const hideNav = ["/seeker", "/SeekerProfile"].some((path) =>
+    //     location.pathname.startsWith(path)
+    // );
     return <div>
         
             <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "#f0f4f8", padding: "1rem 2rem" }}>
@@ -31,21 +31,10 @@ const Navbar = () => {
 
         
 
-        {/* <Routes>
-    
-      <Route path="/" element={<RegistrationComponent />} />
-      <Route path="/register" element={<RegistrationComponent />} />
-      <Route path="/login" element={<LoginComponent />} />
+      
     
       
-      <Route path="/seeker" element={<SeekerNavbarLayout />}>
-        <Route index element={<Seeker />} /> 
-        <Route path="profile" element={<SeekerProfile />} /> 
-        <Route path="logout" element={<Logout />} /> 
-        <Route path="jobs" element={< AllJobs />} /> 
-        <Route path="add-education" element={< SeekerEducationSection />}/>
-      </Route>
-    </Routes> */}
+      
     </div>
 }
 export default Navbar

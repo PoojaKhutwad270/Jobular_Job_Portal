@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, createBrowserRouter, RouterProvider } from "react-router-dom";
-import { store } from "./app/store.js";
+
 import { Provider } from "react-redux";
 import ojpStore from "./store/ojpStore.js";
 import RegistrationComponent from "./components/RegistrationComponent.jsx";
@@ -15,6 +15,9 @@ import SeekerEducationSection from "./components/SeekerEducationComponent.jsx";
 import Logout from "./components/logout.jsx";
 import AllJobs from "./components/AllJobs.jsx";
 import SeekerAppliedJobs from "./components/SeekerAppliedJobs.jsx";
+import AdminDashboard from "./components/AdminDashboard/AdminDashboard.jsx";
+import AdminAllUsers from "./components/AdminDashboard/AdminAllUsers.jsx";
+import AdminAllJobs from "./components/AdminDashboard/AdminAllJobs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -54,9 +57,26 @@ const router = createBrowserRouter([
   {
     path: "/seeker/appliedjobs",
     element: <SeekerAppliedJobs/>
-  }
+  },
 
-])
+
+  
+    {
+      path: "/admin",
+      element:<AdminDashboard/>
+    },
+    {
+      path: "/admin/allusers",
+      element:<AdminAllUsers/>
+    },
+    {
+      path: "/admin/alljobs",
+      element:<AdminAllJobs/>      
+    }
+  ])
+
+
+
 
 createRoot(document.getElementById("root")).render(
   <Provider store={ojpStore} >

@@ -38,7 +38,7 @@ public class User {
 	@ManyToOne
 	@JoinColumn(name = "cityid")
 	@JsonIgnoreProperties("user")
-	City city;
+	private City city;
 
 	public User() {
 		super();

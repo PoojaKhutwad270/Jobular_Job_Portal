@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from 'react-router-dom';
-import { loginSuccess, loginFail } from "../features/userSlice";
+import { useNavigate } from "react-router-dom";
+import {  loginFail } from "../features/userSlice";
 import axios from "axios";
 import LoggedInPageComponent from "./LoggedInPageComponent";
 import { userAction } from "../store/userSlice";
@@ -10,12 +10,12 @@ import Navbar from "./Navbar";
 
 const LoginComponent = () => {
   const dispatch = useDispatch();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   //const user = useSelector((state) => state.user);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const loggedInUser = useSelector((store) => store.loggedInUser);
   console.log(loggedInUser);
   const handleLogin = async (e) => {
@@ -38,8 +38,9 @@ const LoginComponent = () => {
       );
       dispatch(userAction.loggedInUser(response.data));
       console.log("login done");
-       const roleId = response.data.role.rid;
+      const roleId = response.data.role.rid;
 
+<<<<<<< HEAD
  
   if (roleId === 2) {
     navigate("/seeker");
@@ -51,8 +52,17 @@ const LoginComponent = () => {
   else{
     alert("Invalid user")
   }
+=======
+      if (roleId === 2) {
+        navigate("/seeker");
+      } else if (roleId === 1) {
+        navigate("/admin");
+      } else {
+        alert("Invalid user");
+      }
+>>>>>>> 9a21044e4aa2f84d009ba2becd86dfc66fff4190
     } catch (error) {
-      console.log("login not done");
+      console.log("login not done",error);
 
       dispatch(loginFail("Invalid credentials"));
     }
@@ -98,7 +108,7 @@ const LoginComponent = () => {
                 value="remember-me"
                 id="checkDefault"
               />
-              <label className="form-check-label" for="checkDefault">
+              <label className="form-check-label" htmlFor="checkDefault">
                 Remember me
               </label>
             </div>{" "}

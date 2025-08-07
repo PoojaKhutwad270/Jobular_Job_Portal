@@ -14,6 +14,20 @@ const RegistrationComponent = () => {
     role: { rid: "" },
     city: { cityid: "" },
   });
+
+
+
+const[formDataRec,setFormDataRec]=useState({
+   cname: "",
+    caddress: "",
+    licence: "",
+    pancard: "",
+    documents: null,
+    company_phoneno: "",
+    company_email: "",
+    location: "",
+
+  })
   const [passwordError, setPasswordError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [mobnoError, setMobnoError] = useState("");
@@ -41,6 +55,7 @@ const RegistrationComponent = () => {
       });
       if (value == 3) {
         console.log("rid:" + value);
+         setFormDataRec({...formDataRec,[name]:value});
         setDynamicForm(true);
       }
     } else if (name === "cityid") {
@@ -94,6 +109,8 @@ const RegistrationComponent = () => {
     if (!isValid) return;
 
     console.log("Form Data Sent:", formData);
+
+    if(dynamicForm==false){
     try {
       await axios.post("http://localhost:8080/user/save", formData);
 
@@ -107,15 +124,50 @@ const RegistrationComponent = () => {
         role: { rid: "" },
         city: { cityid: "" },
       });
+      console.log("reg request sent");
+      //to do: writing api 
     } catch (error) {
       console.error(error);
       alert("Registration failed.");
     }
+  }
+  else 
+  {
+    try{
+ await axios.post("",formData);
+ 
+ alert("Registration request sent!");
+      setFormData({
+        uname: "",
+        email: "",
+        phone_no: "",
+        address: "",
+        password: "",
+        role: { rid: "" },
+        city: { cityid: "" },
+      });
+await axios.post("",formDataRec);
+setFormDataRec({
+   cname: "",
+    caddress: "",
+    licence: "",
+    pancard: "",
+    documents: null,
+    company_phoneno: "",
+    company_email: "",
+    location: "",
+    
+})
 
-    /*  {dynamicForm == true ? 
-    /  
+    } catch(error){
 
-    }*/
+      console.log("error:",error);
+    }
+   
+  }
+     
+
+    
   };
 
   return (
@@ -240,7 +292,8 @@ const RegistrationComponent = () => {
               />
             </div>
 
-            {dynamicForm == true ? <RecruiterForm /> : null}
+            {dynamicForm == true ? <RecruiterForm formDataRec={formDataRec}
+    setFormDataRec={setFormDataRec} /> : null}
             <div className="col-12 form-check">
               <input
                 className="form-check-input"

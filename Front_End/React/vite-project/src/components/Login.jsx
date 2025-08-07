@@ -1,5 +1,5 @@
-import { useReducer, useRef } from "react";
-import { data } from "react-router-dom";
+import {  useRef } from "react";
+//import { data } from "react-router-dom";
 
 const Login = () => {
   const emailElement = useRef();

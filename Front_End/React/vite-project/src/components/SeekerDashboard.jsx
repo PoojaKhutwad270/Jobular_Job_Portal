@@ -31,7 +31,7 @@ const SeekerDashboard = () => {
         console.log("Jobs Fetched", response.data);
         setJobs(response.data);
       })
-      .catch((error) => console.error("Error fetching jobs posted"));
+      .catch((error) => console.error("Error fetching jobs posted",error));
   }, []);
 
   const handleViewMore = async (jobId) => {

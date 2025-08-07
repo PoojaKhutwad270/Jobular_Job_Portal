@@ -1,31 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
-const RecruiterForm = ({ onChange }) => {
-  const [companyForm, setCompanyForm] = useState({
-    cname: "",
-    caddress: "",
-    licence: "",
-    pancard: "",
-    documents: null,
-    company_phoneno: "",
-    company_email: "",
-    location: "",
-  });
+const RecruiterForm = ({formDataRec,setFormDataRec}) => {
+
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
 
     const newValue = files ? files[0] : value;
 
-    setCompanyForm((prev) => ({
+   setFormDataRec((prev) => ({
       ...prev,
       [name]: newValue,
     }));
 
-    // Optional callback to parent
-    if (onChange) {
-      onChange({ ...companyForm, [name]: newValue });
-    }
   };
 
   return (
@@ -39,7 +26,7 @@ const RecruiterForm = ({ onChange }) => {
             type="text"
             name="cname"
             className="form-control rounded-3"
-            value={companyForm.cname}
+            value={formDataRec.cname}
             onChange={handleChange}
             required
           />
@@ -51,7 +38,7 @@ const RecruiterForm = ({ onChange }) => {
             type="text"
             name="caddress"
             className="form-control rounded-3"
-            value={companyForm.caddress}
+            value={formDataRec.caddress}
             onChange={handleChange}
             required
           />
@@ -63,7 +50,7 @@ const RecruiterForm = ({ onChange }) => {
             type="text"
             name="licence"
             className="form-control rounded-3"
-            value={companyForm.licence}
+            value={formDataRec.licence}
             onChange={handleChange}
             required
           />
@@ -75,7 +62,7 @@ const RecruiterForm = ({ onChange }) => {
             type="text"
             name="pancard"
             className="form-control rounded-3"
-            value={companyForm.pancard}
+            value={formDataRec.pancard}
             onChange={handleChange}
             required
           />
@@ -87,7 +74,7 @@ const RecruiterForm = ({ onChange }) => {
             type="text"
             name="company_phoneno"
             className="form-control rounded-3"
-            value={companyForm.company_phoneno}
+            value={formDataRec.company_phoneno}
             onChange={handleChange}
             required
           />
@@ -99,7 +86,7 @@ const RecruiterForm = ({ onChange }) => {
             type="email"
             name="company_email"
             className="form-control rounded-3"
-            value={companyForm.company_email}
+            value={formDataRec.company_email}
             onChange={handleChange}
             required
           />
@@ -111,7 +98,7 @@ const RecruiterForm = ({ onChange }) => {
             type="text"
             name="location"
             className="form-control rounded-3"
-            value={companyForm.location}
+            value={formDataRec.location}
             onChange={handleChange}
             required
           />

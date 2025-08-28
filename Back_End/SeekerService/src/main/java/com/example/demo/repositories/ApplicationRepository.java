@@ -15,4 +15,6 @@ public interface ApplicationRepository extends JpaRepository<Applications, Integ
 
 	List<Applications> findBySeekerSid(int sid);
 
+	
+
 }

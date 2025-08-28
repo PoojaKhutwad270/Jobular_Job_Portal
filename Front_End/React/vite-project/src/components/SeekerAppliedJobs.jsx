@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import SeekerNavbar from "./SeekerNavbar";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import SeekerJobDetailsModal from "./SeekerJobDetailsModal"; 
 
 const SeekerAppliedJobs = () => {
   const [appliedJobs, setAppliedJobs] = useState([]);
   const [seeker, setSeeker] = useState(null);
+  const [selectedJob, setSelectedJob] = useState(null); 
+  const [showModal, setShowModal] = useState(false);    
   const loggedInUser = useSelector((state) => state.loggedInUser);
 
   useEffect(() => {
@@ -34,6 +37,21 @@ const SeekerAppliedJobs = () => {
     return <span className="badge bg-warning text-dark">Pending</span>;
   };
 
+  const handleJobClick = (job) => {
+    setSelectedJob(job);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedJob(null);
+  };
+
+  const handleApply = (jobId) => {
+    alert(`Apply clicked for job ID: ${jobId}`);
+    
+  };
+
   return (
     <>
       <SeekerNavbar />
@@ -50,9 +68,24 @@ const SeekerAppliedJobs = () => {
 
               return (
                 <div className="col" key={index}>
-                  <div className="card h-100 shadow-sm border-0" style={{ backgroundColor: "#f0f4f8"  }}>
+                  <div className="card h-100 shadow-sm border-0" style={{ backgroundColor: "#f0f4f8" }}>
                     <div className="card-body">
-                      <h5 className="card-title text-primary">{job?.jobTitle}</h5>
+                      <h5
+                        className="card-title text-primary"
+                        role="button"
+                        style={{ cursor: "pointer", textDecoration: "underline" }}
+                        onClick={() => handleJobClick({
+                          ...job,
+                          companyName: company?.companyName,
+                          companyEmail: company?.email,
+                          companyCity: company?.location,
+                          hrEmail: job?.hrEmail,
+                          hrMobile: job?.hrMobile,
+                          skills: job?.skills?.map(skill => skill.skillName),
+                        })}
+                      >
+                        {job?.jobTitle}
+                      </h5>
                       <h6 className="card-subtitle mb-2 text-muted">{company?.companyName}</h6>
 
                       <p className="mb-1 text-secondary">
@@ -77,12 +110,15 @@ const SeekerAppliedJobs = () => {
         )}
       </div>
 
-      <style jsx>{`
-        .card:hover {
-          transform: scale(1.02);
-          transition: transform 0.2s ease-in-out;
-        }
-      `}</style>
+      {showModal && selectedJob && (
+        <SeekerJobDetailsModal
+          job={selectedJob}
+          onClose={handleCloseModal}
+          onApply={handleApply}
+        />
+      )}
+
+      
     </>
   );
 };

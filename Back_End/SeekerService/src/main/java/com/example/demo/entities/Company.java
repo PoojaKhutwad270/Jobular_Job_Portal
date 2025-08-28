@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -39,14 +40,24 @@ private String companyPhonono;
 private String companyEmail;
 private String location;
 
+public List<JobRequirement> getJobs() {
+	return jobs;
+}
+
+public void setJobs(List<JobRequirement> jobs) {
+	this.jobs = jobs;
+}
+
 @ManyToOne(fetch = FetchType.LAZY)
 @JoinColumn(name="uid")
 @JsonIgnoreProperties("companies")
 private User user;
 
-
 @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+@JsonManagedReference
 private List<JobRequirement> jobs = new ArrayList<>();
+
+
 public int getCid() {
 	return cid;
 }

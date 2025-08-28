@@ -27,6 +27,13 @@ import JobApplications from "./components/RecruiterDashboard/JobApplications.jsx
 import PostJobForm from "./components/RecruiterDashboard/PostJobForm.jsx";
 import RecruiterHome from "./components/RecruiterDashboard/RecruterHome.jsx"
 import PostedJobsList from "./components/RecruiterDashboard/PostedJobs.jsx";
+import AdminAllRequests from "./components/AdminDashboard/AdminAllRequests.jsx";
+import AdminAllReports from "./components/AdminDashboard/AdminAllReports.jsx";
+import AllJobApplications from "./components/RecruiterDashboard/AllJobApplications.jsx";
+import CompanyProfile from "./components/RecruiterDashboard/CompanyProfile.jsx";
+import Login from "./components/Login.jsx";
+import ExternalJobPostPage from "./components/RecruiterDashboard/ExternalJobPostPage.jsx";
+import FileComplaint from "./components/FileComplaint.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,9 +46,25 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <RegistrationComponent />
-      }
+      },
+      {
+        path: "login",
+        element:<LoginComponent/>
+          },
+       {
+        path: "logout",
+        element:<Logout/>
+          }
+      
     ]
   },
+  {
+   
+        path: "/admin",
+        element: <AdminDashboard/>
+      
+}
+  ,
   {
     path: "/seeker",
     element: <SeekerDashboard />
@@ -54,57 +77,90 @@ const router = createBrowserRouter([
     path: "/seeker/add-education",
     element: <SeekerEducationSection />
   },
-  {
-    path: "/seeker/logout",
-    element: <Logout />
-  },
+  // {
+  //   path: "/seeker/logout",
+  //   element: <Login />
+  // },
   {
     path: "/seeker/jobs",
     element: <AllJobs />
   },
   {
     path: "/seeker/appliedjobs",
-    element: <SeekerAppliedJobs/>
+    element: <SeekerAppliedJobs />
   },
   {
-    path:"/RecruiterDashboard",
-    element:<RecruiterNavbarLayout />,
-    children:[
-      {
-        path:"/RecruiterDashboard",
-        element:<RecruiterHome />
+    path: "/seeker/file-complaint",
+    element:<FileComplaint/>
+  },
+  {
+    path: "/RecruiterDashboard",
+    element: <RecruiterNavbarLayout />,
+    children: [
+      
+          {
+            path: "/RecruiterDashboard",
+            element: <RecruiterHome />
+          },
+
+          // {
+          //   path:"Profile",
+          //   element:<PostJobForm />  Profile component here
+          // },
+          {
+            path: "PostJobForm",
+            element: <PostJobForm />
+          },
+          {
+            path: "PostedJobsList",
+            element: <PostedJobsList />
+          },
+          {
+            path: "JobApplications/:id",
+            element: <JobApplications />
+          },
+          {
+            path: "JobApplications",
+            element: <AllJobApplications />
+          },
+          {
+            path: "profile",
+            element: <CompanyProfile />
+          },
+          {
+            path: "JobDetail/:id",
+            element: <ExternalJobPostPage />
       },
-      // {
-      //   path:"Profile",
-      //   element:<PostJobForm />  Profile component here
-      // },
-      {
-        path:"PostJobForm",
-        element:<PostJobForm />
+     
+     ]
       },
       {
-        path:"PostedJobsList",
-        element:<PostedJobsList />
+        path: "/admin",
+        element: <AdminDashboard />
       },
       {
-        path:"JobApplications",
-        element:<JobApplications />
+        path: "/admin/allusers",
+        element: <AdminAllUsers />
       },
+      {
+        path: "/admin/alljobs",
+        element: <AdminAllJobs />
+      },
+      {
+        path: "/admin/allrequests",
+        element: <AdminAllRequests />
+      },
+      {
+        path: "/admin/allreports",
+        element: <AdminAllReports />
+   },
+  //     {
+  //       path: "/admin/logout",
+  //       element:<Logout/>
+  //         }
+    
     ]
-  },
-  {
-      path: "/admin",
-      element:<AdminDashboard/>
-    },
-    {
-      path: "/admin/allusers",
-      element:<AdminAllUsers/>
-    },
-    {
-      path: "/admin/alljobs",
-      element:<AdminAllJobs/>      
-    }
-]);
+);
 
 createRoot(document.getElementById("root")).render(
   <Provider store={ojpStore} >

@@ -3,11 +3,13 @@ package com.example.demo.entities;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,6 +31,7 @@ public class JobRequirement {
 	private float salary;
 	
 	@OneToMany(mappedBy = "job")
+	@JsonIgnoreProperties
 	private List<Applications> applications;
 
 	public List<Applications> getApplications() {
@@ -59,9 +62,13 @@ public class JobRequirement {
 		this.description = description;
 	}
 
-	@ManyToOne
+	
+	
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cid")
+	@JsonBackReference
 	private Company company;
+
 
 	public JobRequirement() {
 		super();

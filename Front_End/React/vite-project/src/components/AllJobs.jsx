@@ -10,7 +10,7 @@ const AllJobs = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-     //   const response = await axios.get('/api/jobs'); 
+        const response = await axios.get('/api/jobs'); 
         setJobs(response.data);
       } catch (error) {
         console.error('Failed to fetch jobs:', error);
@@ -22,7 +22,7 @@ const AllJobs = () => {
 
   const handleViewMore = async (jobId) => {
     try {
-     // const res = await axios.get(`/api/jobs/${jobId}`); 
+      const res = await axios.get(`/api/jobs/${jobId}`); 
       setSelectedJob(res.data);
       setShowModal(true);
     } catch (err) {

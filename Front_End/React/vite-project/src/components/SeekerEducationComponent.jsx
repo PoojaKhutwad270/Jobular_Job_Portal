@@ -23,7 +23,7 @@ const SeekerEducationSection = () => {
   useEffect(() => {
     const fetchEducation = async () => {
       try {
-        const res = await axios.get(`http://localhost:8081/seeker/getByUid/${loggedInUser.uid}`);
+        const res = await axios.get(`http://localhost:8081/seeker/getSeeker/${loggedInUser.uid}`);
         if (res.data) {
           setForm(res.data); // populate form with existing data
         }
@@ -48,6 +48,7 @@ const SeekerEducationSection = () => {
       };
       const res = await axios.post(`http://localhost:8081/seeker/save/${loggedInUser.uid}`, payload);
       alert("Saved successfully!");
+      console.log("res",res);
     } catch (err) {
       console.error("Error saving:", err);
       alert("Failed to save education.");

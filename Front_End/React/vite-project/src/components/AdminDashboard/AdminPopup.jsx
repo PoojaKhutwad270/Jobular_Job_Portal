@@ -7,7 +7,7 @@ const AdminPopup = ({ setPopup, company}) => {
   console.log(company);
   const navigate = useNavigate();
   const [approval, setApproval] = useState(false);
-
+  const [reject, setReject] = useState(false);
   return (
     <div>
       <div
@@ -44,6 +44,7 @@ const AdminPopup = ({ setPopup, company}) => {
                     <div className="col-md-6">
                       <label className="form-label fw-semibold">Company Name</label>
                       <div className="form-control bg-light">{com.cname}</div>
+                      {com.cname}
                     </div>
 
                     <div className="col-md-6">
@@ -108,6 +109,34 @@ const AdminPopup = ({ setPopup, company}) => {
                         </button>
                       )}
 
+
+                     
+                      {!reject ? (
+                      
+                        <button
+                          className="btn btn-secondary"
+                          onClick={() => {
+                            axios
+                              .patch(`http://localhost:9000/reject/${com.cid}`)
+                              .then((res) => {
+                                console.log(res);
+                                setReject(true);
+                           
+                                alert("rejected");
+                              })
+                              .catch((err) => {
+                                console.log("error", err);
+                              });
+                          }}
+                        >
+                          Reject
+                        </button>
+                      ) : (
+                        <button className="btn btn-secondary" >
+                          Rejected
+                        </button>
+                      )}
+
                       <button
                         className="btn btn-secondary"
                         onClick={() => {
@@ -115,6 +144,8 @@ const AdminPopup = ({ setPopup, company}) => {
                           navigate("/recruiter/profile");
                         }}
                       >
+
+                        
                         Check Company Profile
                       </button>
                     </div>

@@ -118,7 +118,7 @@ const RecruiterNavbarLayout = () => {
             <Link className="nav-link fw-semibold text-dark" to="/RecruiterDashboard/profile">
               Profile
             </Link>
-            <Link className="nav-link fw-semibold text-danger" to="/">
+            <Link className="nav-link fw-semibold text-danger" to="/logout">
               Logout
             </Link>
           </div>

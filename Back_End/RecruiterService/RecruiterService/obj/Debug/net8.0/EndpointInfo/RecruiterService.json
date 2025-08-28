@@ -1,0 +1,1033 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "RecruiterService",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Application": {
+      "get": {
+        "tags": [
+          "Application"
+        ],
+        "parameters": [
+          {
+            "name": "phase",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Application/{id}": {
+      "get": {
+        "tags": [
+          "Application"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "phase",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Application/{id}/move-to-phase": {
+      "put": {
+        "tags": [
+          "Application"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovePhaseRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovePhaseRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovePhaseRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Company/GetCompanies": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Company/PostCompany": {
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/company"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/company"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/company"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Company/GetCompanyById/{uid}": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Company/UpdateCompany/UpdateCompany/{cid}": {
+      "put": {
+        "tags": [
+          "Company"
+        ],
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/job_requirement/GetJobRequirements/{id}": {
+      "get": {
+        "tags": [
+          "job_requirement"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/job_requirement/PostJob": {
+      "post": {
+        "tags": [
+          "job_requirement"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobRequirementDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobRequirementDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobRequirementDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/job_requirement/GetJobReqPost/{reqid}": {
+      "get": {
+        "tags": [
+          "job_requirement"
+        ],
+        "parameters": [
+          {
+            "name": "reqid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SkillSet/GetSkillSets": {
+      "get": {
+        "tags": [
+          "SkillSet"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CompanyUpdateDto": {
+        "type": "object",
+        "properties": {
+          "cid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cname": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "JobRequirementDto": {
+        "type": "object",
+        "properties": {
+          "cid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "job_title": {
+            "type": "string",
+            "nullable": true
+          },
+          "salary": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "experience": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date"
+          },
+          "role_description": {
+            "type": "string",
+            "nullable": true
+          },
+          "skillIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MovePhaseRequest": {
+        "type": "object",
+        "properties": {
+          "appIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "newPhase": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "currentPhase": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additional_qualification": {
+        "type": "object",
+        "properties": {
+          "qid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "qname": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "marks": {
+            "type": "number",
+            "format": "double"
+          },
+          "specialization": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "university": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "grade": {
+            "maxLength": 15,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "sidNavigation": {
+            "$ref": "#/components/schemas/seeker"
+          }
+        },
+        "additionalProperties": false
+      },
+      "application": {
+        "type": "object",
+        "properties": {
+          "appid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "req_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "phase": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "req": {
+            "$ref": "#/components/schemas/job_requirement"
+          },
+          "schedules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/schedule"
+            },
+            "nullable": true
+          },
+          "sidNavigation": {
+            "$ref": "#/components/schemas/seeker"
+          }
+        },
+        "additionalProperties": false
+      },
+      "city": {
+        "type": "object",
+        "properties": {
+          "cityid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cityname": {
+            "type": "string",
+            "nullable": true
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/user"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "company": {
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "cid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "uid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cname": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "caddress": {
+            "maxLength": 250,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "licence": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "pancard": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "documents": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "company_phoneno": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "company_email": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+          },
+          "job_requirements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/job_requirement"
+            },
+            "nullable": true
+          },
+          "uidNavigation": {
+            "$ref": "#/components/schemas/user"
+          }
+        },
+        "additionalProperties": false
+      },
+      "job_requirement": {
+        "type": "object",
+        "properties": {
+          "req_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "job_title": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "salary": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "experience": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date"
+          },
+          "role_description": {
+            "type": "string",
+            "nullable": true
+          },
+          "applications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/application"
+            },
+            "nullable": true
+          },
+          "cidNavigation": {
+            "$ref": "#/components/schemas/company"
+          },
+          "job_skills": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/job_skill"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "job_skill": {
+        "type": "object",
+        "properties": {
+          "js_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "req_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ss_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "req": {
+            "$ref": "#/components/schemas/job_requirement"
+          },
+          "ss": {
+            "$ref": "#/components/schemas/skillset"
+          }
+        },
+        "additionalProperties": false
+      },
+      "role": {
+        "type": "object",
+        "properties": {
+          "rid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rname": {
+            "type": "string",
+            "nullable": true
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/user"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "schedule": {
+        "type": "object",
+        "properties": {
+          "sch_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "appid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "meeting_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "result": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "interviewer": {
+            "maxLength": 45,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "comment": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "app": {
+            "$ref": "#/components/schemas/application"
+          }
+        },
+        "additionalProperties": false
+      },
+      "seeker": {
+        "type": "object",
+        "properties": {
+          "sid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "uid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "school_name_10th": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "marks_10th": {
+            "type": "number",
+            "format": "double"
+          },
+          "school_name_12th": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "marks_12th": {
+            "type": "number",
+            "format": "double"
+          },
+          "graduation_degree": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "grad_university": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "graduation_marks": {
+            "type": "number",
+            "format": "double"
+          },
+          "passout_year": {
+            "type": "string",
+            "format": "date"
+          },
+          "experience": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dob": {
+            "type": "string",
+            "format": "date"
+          },
+          "gender": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "resume": {
+            "maxLength": 250,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "additional_qualifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/additional_qualification"
+            },
+            "nullable": true
+          },
+          "applications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/application"
+            },
+            "nullable": true
+          },
+          "seeker_skills": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/seeker_skill"
+            },
+            "nullable": true
+          },
+          "uidNavigation": {
+            "$ref": "#/components/schemas/user"
+          }
+        },
+        "additionalProperties": false
+      },
+      "seeker_skill": {
+        "type": "object",
+        "properties": {
+          "seekerskill_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ss_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "sidNavigation": {
+            "$ref": "#/components/schemas/seeker"
+          },
+          "ss": {
+            "$ref": "#/components/schemas/skillset"
+          }
+        },
+        "additionalProperties": false
+      },
+      "skillset": {
+        "type": "object",
+        "properties": {
+          "ss_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skillname": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "job_skills": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/job_skill"
+            },
+            "nullable": true
+          },
+          "seeker_skills": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/seeker_skill"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "user": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "uname": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone_no": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "cityid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "$ref": "#/components/schemas/city"
+          },
+          "companies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/company"
+            },
+            "nullable": true
+          },
+          "ridNavigation": {
+            "$ref": "#/components/schemas/role"
+          },
+          "seekers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/seeker"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

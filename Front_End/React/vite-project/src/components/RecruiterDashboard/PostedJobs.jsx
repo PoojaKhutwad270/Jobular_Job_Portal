@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const PostedJobsList = () => {
   const [jobs, setJobs] = useState([]);
   const navigate = useNavigate();
+   const loggedInUser = useSelector((store) => store.loggedInUser);
 
   useEffect(() => {
     axios
-      .get("https://localhost:7269/api/job_requirement/GetJobRequirements")
-      .then((res) => {
+      .get(`https://localhost:7269/api/job_requirement/GetJobRequirements/${loggedInUser?.uid}`).then((res) => {
         console.log("Job API response:", res.data);
         setJobs(res.data);
       })
@@ -27,8 +28,8 @@ const PostedJobsList = () => {
     });
   };
 
-  const handleJobClick = (id) => {
-    navigate(`/job/${id}`);
+ const handleJobClick = (id) => {
+    navigate(`/RecruiterDashboard/JobApplications/${id}`);
   };
 
   return (

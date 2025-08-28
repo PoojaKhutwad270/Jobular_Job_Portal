@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { loginSuccess, logout } from "../features/userSlice"
+import {  logout } from "../features/userSlice"
 import { useNavigate } from "react-router-dom"
 const Logout=()=>{
     const dispatch=useDispatch();
@@ -11,9 +11,7 @@ const Logout=()=>{
         if(confirmed){
         dispatch(logout());
         navigate("/login");
-        }else {
-    
-    }
+        }
         
     },[dispatch, navigate]);
     return null;

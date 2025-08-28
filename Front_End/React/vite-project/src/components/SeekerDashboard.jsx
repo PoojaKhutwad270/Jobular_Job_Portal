@@ -1,38 +1,65 @@
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Modal, Button } from 'react-bootstrap';
+import { useNavigate, useLocation } from 'react-router-dom';
 import SeekerNavbar from './SeekerNavbar';
+import SeekerProfileCard from './SeekerProfileCard';
+import SeekerJobCard from './SeekerJobCard';
+import SeekerJobDetailsModal from './SeekerJobDetailsModal';
 
 const SeekerDashboard = () => {
   const loggedInUser = useSelector((store) => store.loggedInUser);
   const [seeker, setSeeker] = useState(null);
   const [jobs, setJobs] = useState([]);
+  const [filteredJobs, setFilteredJobs] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [experienceFilter, setExperienceFilter] = useState("");
+  const [locationFilter, setLocationFilter] = useState("");
   const [selectedJob, setSelectedJob] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [message, setMessage] = useState("");
-  const navigate = useNavigate();
+  const [showEditModal, setShowEditModal] = useState(false);
+  //const [message, setMessage] = useState('');
 
- 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.search) setSearchTerm(location.state.search);
+    if (location.state?.experience) setExperienceFilter(location.state.experience);
+    if (location.state?.location) setLocationFilter(location.state.location);
+  }, [location.state]);
+
   useEffect(() => {
     if (!loggedInUser?.uid) return;
-
-    axios
-      .get(`http://localhost:8081/seeker/getSeeker/${loggedInUser.uid}`)
-      .then((response) => setSeeker(response.data))
-      .catch((error) => console.error("Error fetching seeker profile:", error));
+    axios.get(`http://localhost:8081/seeker/getSeeker/${loggedInUser.uid}`)
+      .then(res => setSeeker(res.data))
+      .catch(err => console.error("Seeker fetch error:", err));
   }, [loggedInUser]);
 
-  
   useEffect(() => {
-    axios
-      .get("http://localhost:8081/jobs/getAllJobs")
-      .then((response) => {
-        console.log("Jobs Fetched", response.data);
-        setJobs(response.data);
+    axios.get("http://localhost:8081/jobs/getAllJobs")
+      .then(res => {
+        setJobs(res.data);
+        setFilteredJobs(res.data);
       })
-      .catch((error) => console.error("Error fetching jobs posted",error));
+      .catch(err => console.error("Jobs fetch error:", err));
   }, []);
+
+  useEffect(() => {
+    const term = searchTerm.toLowerCase().trim();
+    const filtered = jobs.filter((job) => {
+      const matchesSearch =
+        job.jobTitle?.toLowerCase().includes(term) ||
+        job.company?.companyName?.toLowerCase().includes(term);
+      const matchesExperience =
+        experienceFilter === "" || job.experience >= parseInt(experienceFilter);
+      const matchesLocation =
+        locationFilter === "" || job.company?.location === locationFilter;
+      return matchesSearch && matchesExperience && matchesLocation;
+    });
+    setFilteredJobs(filtered);
+  }, [searchTerm, experienceFilter, locationFilter, jobs]);
 
   const handleViewMore = async (jobId) => {
     try {
@@ -40,168 +67,84 @@ const SeekerDashboard = () => {
       setSelectedJob(res.data);
       setShowModal(true);
     } catch (err) {
-      console.error("Error fetching job details:", err);
+      console.error("Job details fetch error:", err);
     }
   };
 
-const handleApply = async (jobId) => {
-  const seekerId = seeker?.sid; 
-  console.log(seekerId);
-  if (!seekerId) {
-    console.error("Seeker ID not found. Make sure seeker data is loaded.");
-    return;
-  }
+  const handleApply = async (jobId) => {
+    const seekerId = seeker?.sid;
+    if (!seekerId) return;
+    const appData = {
+      seeker: { sid: parseInt(seekerId) },
+      job: { reqid: parseInt(jobId) },
+      date: new Date().toISOString(),
+      status: 0,
+    };
+    try {
+      await axios.post("http://localhost:8081/applications/save", appData);
+      alert("Applied successfully!");
+    } catch (err) {
+      console.error("Application error:", err);
+    }
+  };
 
-  const applicationData = {
-  seeker: { sid: parseInt(seekerId) },
-  job: { reqid: parseInt(jobId) },
-  date: new Date().toISOString(), 
-  status: 0 
-};
-
-
-  console.log("Submitting application:", applicationData);
-
-  try {
-    await axios.post('http://localhost:8081/applications/save', applicationData);
-    alert("Applied successfully!");
-  } catch (error) {
-    console.error("Error applying to job:", error);
-  }
-};
-
-
-
-
-
+  const handleEditClick = () => setShowEditModal(true);
+  const handleNavigateToSection = (section) => {
+    setShowEditModal(false);
+    navigate(`/seeker/${section}`);
+  };
 
   return (
     <>
-      <SeekerNavbar />
-      <div className="container mt-5">
-        {message && (
-          <div className="alert alert-info alert-dismissible fade show" role="alert">
-            {message}
-            <button type="button" className="btn-close" onClick={() => setMessage("")}></button>
-          </div>
-        )}
+      <SeekerNavbar
+  onSearch={(term) => setSearchTerm(term)}
+  onFilterChange={({ experience, location }) => {
+    setExperienceFilter(experience);
+    setLocationFilter(location);
+  }}
+/>
+
+
         <div className="row">
           <div className="col-md-3">
-            <div
-              className="artdeco-card mb-3 overflow-hidden shadow-sm profile-card border rounded-4 p-3"
-              style={{
-                position: 'sticky',
-                top: '50px',
-                backgroundColor: '#fff',
-                borderColor: '#ccc',
-              }}
-            >
-              <div
-                style={{
-                  height: '80px',
-                  backgroundColor: '#e8eef5',
-                  borderRadius: '10px 10px 0 0',
-                }}
-              ></div>
-
-              <div className="d-flex mt-n4">
-                <img
-                  src="https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg"
-                  alt="Profile"
-                  className="rounded-circle border border-2 border-white shadow me-3"
-                  width="70"
-                  height="70"
-                />
-                <div className="d-flex flex-column justify-content-center">
-                  <h6 className="fw-bold text-primary mb-1">{loggedInUser?.uname}</h6>
-                  <p className="text-muted mb-1 small">{seeker?.graduationDegree || "Degree not available"}</p>
-                  <p className="text-muted small">{seeker?.university || "University not available"}</p>
-                </div>
-              </div>
-
-              <hr />
-
-              <nav className="nav flex-column">
-                <button className="nav-link text-start btn btn-link px-0 py-1" onClick={()=>navigate("/seeker/appliedjobs")}>Applied Jobs</button>
-                <button className="nav-link text-start btn btn-link px-0 py-1">Saved Jobs</button>
-                <button
-                  className="nav-link text-start btn btn-link px-0 py-1"
-                  onClick={() => navigate("/seeker/profile")}
-                >
-                  Edit Profile
-                </button>
-                <button className="nav-link text-start btn btn-link px-0 py-1">Schedule</button>
-              </nav>
-            </div>
+            <SeekerProfileCard seeker={seeker} loggedInUser={loggedInUser} onEditClick={handleEditClick} />
           </div>
 
           <div className="col-md-8">
             <div className="card shadow-sm p-3 rounded-4 border border-light-subtle mb-4 bg-white">
-              {jobs.map((job) => (
-                <div
-                  key={job.jobId}
-                  className="p-3 mb-3 shadow-sm rounded-3"
-                  style={{ backgroundColor: "#f9fbfc" }}
-                >
-                  <h5 className="text-primary fw-bold mb-1">{job.companyName}</h5>
-                  <p className="mb-1 text-muted">
-                    <strong>Role:</strong> {job.jobTitle}
-                  </p>
-                  <p className="mb-3 text-muted">
-                    <strong>Location:</strong> {job.location}
-                  </p>
-                  <button
-                    className="btn btn-outline-primary btn-sm"
-                    onClick={() => handleViewMore(job.jobId)}
-                  >
-                    View More
-                  </button>
-                </div>
-              ))}
+              {filteredJobs.length > 0 ? (
+                filteredJobs.map((job) => (
+                  <SeekerJobCard key={job.jobId} job={job} onViewMore={handleViewMore} />
+                ))
+              ) : (
+                <p className="text-muted">No jobs found.</p>
+              )}
             </div>
-
-            {/* MODAL */}
-            {showModal && selectedJob && (
-              <div
-                className="modal fade show d-block"
-                tabIndex="-1"
-                style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
-              >
-                <div className="modal-dialog modal-lg">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title">{selectedJob.title}</h5>
-                      <button
-                        type="button"
-                        className="btn-close"
-                        onClick={() => setShowModal(false)}
-                      />
-                    </div>
-                    <div className="modal-body">
-                      <p><strong>Company:</strong> {selectedJob.companyName}</p>
-                      <p><strong>City:</strong> {selectedJob.companyCity}</p>
-                      <p><strong>Description:</strong> {selectedJob.description}</p>
-                      <p><strong>Salary:</strong> {selectedJob.salary}</p>
-                      <hr />
-                      <p><strong>HR Email:</strong> {selectedJob.hrEmail}</p>
-                      <p><strong>HR Mobile:</strong> {selectedJob.hrMobile}</p>
-                    </div>
-                    <div className="modal-footer">
-                      <button className="btn btn-primary" onClick={() => setShowModal(false)}>
-                        Close
-                      </button>
-                      <button className="btn btn-primary" onClick={()=>handleApply(selectedJob.jobId)}>
-                        Apply
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-           
           </div>
         </div>
-      </div>
+
+        {showModal && selectedJob && (
+          <SeekerJobDetailsModal
+            job={selectedJob}
+            onClose={() => setShowModal(false)}
+            onApply={handleApply}
+          />
+        )}
+
+        {showEditModal && (
+          <Modal show={showEditModal} onHide={() => setShowEditModal(false)} centered>
+            <Modal.Header closeButton>
+              <Modal.Title>Select Profile Section</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Button className="w-100 mb-2" variant="outline-primary" onClick={() => handleNavigateToSection("education")}>
+                Add Education
+              </Button>
+              <Button className="w-100" variant="outline-success" onClick={() => handleNavigateToSection("skills")}>Add Skills</Button>
+            </Modal.Body>
+          </Modal>
+        )}
+     
     </>
   );
 };

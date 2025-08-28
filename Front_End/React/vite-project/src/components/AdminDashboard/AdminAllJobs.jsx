@@ -5,6 +5,7 @@ import AdminJobCard from "./AdminJobCard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import AdminNavbar from "./AdminNavbar";
+import { Link } from "react-router-dom";
 
 const AdminAllJobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -33,16 +34,18 @@ const AdminAllJobs = () => {
           ) : jobs.length === 0 ? (
             <p>No jobs found.</p>
           ) : (
-            jobs.map((job) => (
-              <AdminJobCard
-       
+                jobs.map((job) => (
+                
+          
+              <Link  to={`/RecruiterDashboard/JobDetail/${job.req_id}`} > {console.log(job.req_id)} <AdminJobCard
+         
                 title={job.job_title}
                 company={job.cname}
                 location={job.location}
               
                 postedOn={job.experience}
                 deadline={job.deadline}
-              />
+              /></Link>
             ))
           )}
         </div>

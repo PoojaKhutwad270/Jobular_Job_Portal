@@ -23,9 +23,6 @@ public class ApplicationsController {
 	
 	@PostMapping("/save")
 	public Object insertApplication(@RequestBody Applications app) {
-	    System.out.println("Received application: " + app);
-	    System.out.println("Seeker ID: " + (app.getSeeker() != null ? app.getSeeker().getSid() : "null"));
-	    System.out.println("Job ID: " + (app.getJob() != null ? app.getJob().getReqid() : "null"));
 	    return appservice.insertOrUpdateApplication(app);
 	}
 	@GetMapping("getAllAppliedJobs/{sid}")

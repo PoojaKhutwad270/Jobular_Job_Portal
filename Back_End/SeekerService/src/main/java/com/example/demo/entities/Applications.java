@@ -25,7 +25,17 @@ public class Applications {
 	int status;
 	@Column(name="date")
 	Date date;
+	@Column(name="phase")
+	 Integer phase;
 	
+	public Integer getPhase() {
+		return phase;
+	}
+
+	public void setPhase(Integer phase) {
+		this.phase = phase;
+	}
+
 	@ManyToOne
 	@JoinColumn(name = "req_id")
 	@JsonIgnoreProperties("applications")

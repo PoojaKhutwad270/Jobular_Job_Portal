@@ -6,13 +6,17 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AdminPopup from "./AdminPopup";
 import AdminNavbar from "./AdminNavbar";
+import AdminReportPopup from "./AdminReportPopup";
 
 
 const AdminDashboard = () => {
   const [loadedInfo, setLoadedInfo] = useState({});
 
   const [popup, setPopup] = useState(false);
-const [selectedCompany, setSelectedCompany] = useState([]);
+
+const [reportPopup, setReportPopup] = useState(false);
+  const [selectedCompany, setSelectedCompany] = useState([]);
+   const [selectedComplaint, setSelectedComplaint] = useState([]);
   useEffect(() => {
     axios
       .get("/dashboard")
@@ -193,7 +197,8 @@ const [selectedCompany, setSelectedCompany] = useState([]);
 
             </div>
           )
-          }  
+            }  
+            
             {/* Reports Table */}
             <div className="card shadow-sm border-0 rounded-3">
               <div className="card-header bg-white fw-bold " id="reports">Latest Reports</div>
@@ -212,9 +217,10 @@ const [selectedCompany, setSelectedCompany] = useState([]);
                   <tbody>
                     {(loadedInfo.reports || []).map((rep, i) => (
                       <tr key={i}>
+                        { console.log("rep", rep) }
                         <td>{rep.cname}</td>
                         <td>{rep.uname}</td>
-                        <td>{rep.complaint}</td>
+                        <td>{rep.description}</td>
                         <td>{new Date(rep.date).toLocaleDateString()}</td>
                         <td>
                           <span className={`badge bg-${
@@ -229,14 +235,22 @@ const [selectedCompany, setSelectedCompany] = useState([]);
                           
                
                         </td>
-                        <td><button className="btn btn-sm btn-outline-primary">View</button></td>
+                        <td><button onClick={() => { setReportPopup(true); setSelectedComplaint([rep])} } className="btn btn-sm btn-outline-primary">View</button></td>
                       </tr>
+                      
                     ))}
                   </tbody>
-                </table>
-              </div>
+                  </table>
+              
+                {(reportPopup) && (
+             
+                  <div>
+                    <AdminReportPopup setReportPopup={setReportPopup} complaint={selectedComplaint} />
+                  </div>)}
+                
+                
+</div>
             </div>
-
           </div>
         </div>
       </div>

@@ -45,5 +45,8 @@ public class JobRequirementService {
 		
 	}
 
-	
+	public List<JobRequirement> searchJobs(String keyword) {
+	    return jrepo.searchJobs(keyword);
+	}
+
 }

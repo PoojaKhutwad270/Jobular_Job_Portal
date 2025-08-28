@@ -1,0 +1,330 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\recruiterservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\recruiterservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\controllers\\job_requirementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\controllers\\job_requirementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\models\\job_skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\models\\job_skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\controllers\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\controllers\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\models\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\models\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\dtos\\jobrequirementdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\dtos\\jobrequirementdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\models\\job_requirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\models\\job_requirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\models\\additional_qualification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\models\\additional_qualification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\models\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\models\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|d:\\cdac\\projects\\recruiterservice2\\recruiterservice\\recruiterservice\\dtos\\movephasedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A4E15CD-043D-44E4-9CE0-4518CF47F9EC}|RecruiterService\\RecruiterService.csproj|solutionrelative:recruiterservice\\dtos\\movephasedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Controllers\\CompanyController.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Controllers\\CompanyController.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Controllers\\CompanyController.cs",
+              "RelativeToolTip": "RecruiterService\\Controllers\\CompanyController.cs",
+              "ViewState": "AgIAADAAAACAzczMzMwmwIYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T19:49:18.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Program.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Program.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Program.cs",
+              "RelativeToolTip": "RecruiterService\\Program.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T19:30:41.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "job_requirementController.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Controllers\\job_requirementController.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Controllers\\job_requirementController.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Controllers\\job_requirementController.cs",
+              "RelativeToolTip": "RecruiterService\\Controllers\\job_requirementController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAUwFYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T02:01:01.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RecruiterService.csproj",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\RecruiterService.csproj",
+              "RelativeDocumentMoniker": "RecruiterService\\RecruiterService.csproj",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\RecruiterService.csproj",
+              "RelativeToolTip": "RecruiterService\\RecruiterService.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-07T23:23:25.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "job_skill.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\job_skill.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Models\\job_skill.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\job_skill.cs",
+              "RelativeToolTip": "RecruiterService\\Models\\job_skill.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T19:17:55.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationController.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Controllers\\ApplicationController.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Controllers\\ApplicationController.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Controllers\\ApplicationController.cs",
+              "RelativeToolTip": "RecruiterService\\Controllers\\ApplicationController.cs",
+              "ViewState": "AgIAAG8AAAAAa2ZmZmYawHsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T17:15:13.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "user.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\user.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Models\\user.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\user.cs",
+              "RelativeToolTip": "RecruiterService\\Models\\user.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T20:05:18.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "RecruiterService\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T23:15:40.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "JobRequirementDto.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\DTOs\\JobRequirementDto.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\DTOs\\JobRequirementDto.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\DTOs\\JobRequirementDto.cs",
+              "RelativeToolTip": "RecruiterService\\DTOs\\JobRequirementDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T08:23:11.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "city.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\city.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Models\\city.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\city.cs",
+              "RelativeToolTip": "RecruiterService\\Models\\city.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAQwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T12:42:50.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "company.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\company.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Models\\company.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\company.cs",
+              "RelativeToolTip": "RecruiterService\\Models\\company.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAABQvXQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T12:48:07.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "job_requirement.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\job_requirement.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Models\\job_requirement.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\job_requirement.cs",
+              "RelativeToolTip": "RecruiterService\\Models\\job_requirement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T03:31:58.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "additional_qualification.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\additional_qualification.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Models\\additional_qualification.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\additional_qualification.cs",
+              "RelativeToolTip": "RecruiterService\\Models\\additional_qualification.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T19:17:46.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\appsettings.json",
+              "RelativeDocumentMoniker": "RecruiterService\\appsettings.json",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\appsettings.json",
+              "RelativeToolTip": "RecruiterService\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-09T04:23:01.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "RecruiterService\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Properties\\launchSettings.json",
+              "RelativeToolTip": "RecruiterService\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-09T04:22:47.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Services\\EmailService.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Services\\EmailService.cs",
+              "RelativeToolTip": "RecruiterService\\Services\\EmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T23:25:18.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "application.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\application.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\Models\\application.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\Models\\application.cs",
+              "RelativeToolTip": "RecruiterService\\Models\\application.cs",
+              "ViewState": "AgIAAB4AAAAAMzMzMzMpwBgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T20:05:16.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "MovePhaseDto.cs",
+              "DocumentMoniker": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\DTOs\\MovePhaseDto.cs",
+              "RelativeDocumentMoniker": "RecruiterService\\DTOs\\MovePhaseDto.cs",
+              "ToolTip": "D:\\CDAC\\projects\\RecruiterService2\\RecruiterService\\RecruiterService\\DTOs\\MovePhaseDto.cs",
+              "RelativeToolTip": "RecruiterService\\DTOs\\MovePhaseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T23:16:00.331Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,17 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+//  import { useParams } from "react-router-dom";
 const Recruiter = () => {
+
+
+
+
+//   const { uid } = useParams();
+  
+//   // Use uid to fetch or show info specific to this recruiter
+//   return <div>Welcome Recruiter {uid}'s Dashboard</div>;
+
+
   const loggedInUser = useSelector((store) => store.loggedInUser);
 
   return (

@@ -3,7 +3,7 @@ import companylogo from '../../assets/companylogo.png';
 
 const AdminJobCard = ({ title, company, location, postedOn, deadline }) => {
   return (
-    <div className="mx-5 card p-3 mb-2 mt-2 shadow-sm border rounded-3">
+    <div  className="mx-5 card p-3 mb-2 mt-2 shadow-sm border rounded-3">
       <div className="d-flex align-items-center gap-3">
         <img
                   src={companylogo} 

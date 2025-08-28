@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,10 +25,12 @@ public class SeekerController {
 SeekerService seekService;
 	 @Autowired
 	    private UserRepository userRepo;
-	@GetMapping("/getSeeker/{uid}")
-	public Optional<JobSeeker> getSeekerByUser(@PathVariable int uid) {
-	    return seekService.findBySeekerBYId(uid);
-	}
+	 @GetMapping("/getSeeker/{uid}")
+	 public JobSeeker getSeekerByUser(@PathVariable int uid) {
+	     Optional<JobSeeker> seekerOpt = seekService.findBySeekerBYId(uid);
+	     return seekerOpt.orElse(null);
+	 }
+
 	@PostMapping("/save/{uid}")
 	public JobSeeker saveSeekerByUser(@PathVariable int uid, @RequestBody JobSeeker seeker) {
 	    return seekService.saveSeeker(uid,seeker);

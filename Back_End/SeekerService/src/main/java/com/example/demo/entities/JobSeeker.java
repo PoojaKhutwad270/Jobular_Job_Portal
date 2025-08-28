@@ -61,12 +61,25 @@ private int sid;
 	  private User user;
 	 
 	 @OneToMany(mappedBy = "seeker", cascade = CascadeType.ALL, orphanRemoval = true)
+	
 	 private Set<SeekerSkill> seekerSkills = new HashSet<>();
 	 
 	 @OneToMany(mappedBy = "seeker")
+	 @JsonIgnore
 		private List<Applications> applications;
 
+	   public List<AdditionalQualification> getAdditionalQualifications() {
+		return additionalQualifications;
+	}
 
+	public void setAdditionalQualifications(List<AdditionalQualification> additionalQualifications) {
+		this.additionalQualifications = additionalQualifications;
+	}
+
+	@OneToMany(mappedBy = "seeker", cascade = CascadeType.ALL)
+	 @JsonIgnore
+	private List<AdditionalQualification> additionalQualifications;
+	   
 	public List<Applications> getApplications() {
 		return applications;
 	}

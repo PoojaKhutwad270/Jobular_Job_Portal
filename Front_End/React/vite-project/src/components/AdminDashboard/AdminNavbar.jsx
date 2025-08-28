@@ -28,7 +28,7 @@ const AdminNavbar = () => {
               <li className="nav-item"><Link className="nav-link" to="/admin/allreports">Reports</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/admin/adminProfile">Profile</Link></li>
             </ul>
-            <button className="btn btn-outline-light">Logout</button>
+           <Link to="/logout" ><button className="btn btn-outline-light">Logout</button></Link>
           </div>
         </div>
       </nav>

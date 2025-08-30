@@ -2,12 +2,10 @@
 
 
 
-1.Register
+1.Login & Registration
 <img width="1920" height="1080" alt="Signin" src="https://github.com/user-attachments/assets/137bb70f-4a4e-4396-b85c-08ed7ac9d0d9" />
 <img width="1920" height="1080" alt="Register2" src="https://github.com/user-attachments/assets/5e562353-fc74-4f89-a95c-4d529184482f" />
 
-2.Login
-<img width="1920" height="1080" alt="Signin" src="https://github.com/user-attachments/assets/46588117-f311-4e0e-9967-e22651e87513" />
 
 2.Admin dashboard
 <img width="1920" height="1080" alt="Screenshot (57)" src="https://github.com/user-attachments/assets/96cb54bf-76e4-4e87-b8c4-1e1eea73d59b" />

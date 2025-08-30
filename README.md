@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/06edd403-f11c-46c6-a32c-a35fb8d28a04" />"# Jobular_Job_Portal" 
+"# Jobular_Job_Portal" 
 
 
 

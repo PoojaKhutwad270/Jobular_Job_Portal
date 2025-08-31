@@ -5,7 +5,7 @@
 <img width="939" height="1058" alt="image" src="https://github.com/user-attachments/assets/b05c221c-f6b6-4b0d-8f82-6601b6a40121" />
 
 <img width="1140" height="641" alt="image" src="https://github.com/user-attachments/assets/841b71c1-cf78-487f-ac16-6f13bf82c23a" />
-<br/>
+<br>
 2)Admin Dashboard -
 
 <img width="955" height="537" alt="image" src="https://github.com/user-attachments/assets/71436e8a-9e29-4743-b8d2-9b81dbb12f96" />

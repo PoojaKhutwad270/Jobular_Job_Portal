@@ -1,4 +1,5 @@
 "# Jobular_Job_Portal" 
+<br/>
 1)Registration and login page -
 
 <img width="939" height="1058" alt="image" src="https://github.com/user-attachments/assets/b05c221c-f6b6-4b0d-8f82-6601b6a40121" />
